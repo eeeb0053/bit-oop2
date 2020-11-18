@@ -1,8 +1,5 @@
 package calculator;
 
-import bmi.*;
-import user.*;
-
 public class CalculatorController {
 	public int execute(CalculatorDTO cal) {
 		CalculatorService service = new CalculatorServiceImpl();
@@ -20,9 +17,5 @@ public class CalculatorController {
 			res = service.modul(cal);
 		}
 		return res;
-	}
-	
-	public String getBmi(UserDTO user, BmiDTO bmi) {
-		return String.format("%s님의 BMI 지수는 %.2f 입니다.", user.getName(), new BmiServiceImpl().calcBmi(bmi));
 	}
 }

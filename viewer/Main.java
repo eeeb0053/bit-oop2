@@ -10,7 +10,8 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		CalculatorDTO cal = new CalculatorDTO();
-		CalculatorController controller = new CalculatorController();
+		CalculatorController calController = new CalculatorController();
+		BmiController bmiController = new BmiController();
 		BmiDTO bmi = new BmiDTO();
 		UserDTO user = new UserDTO();
 		
@@ -25,7 +26,7 @@ public class Main {
 			cal.setOpcode(scanner.next());
 			System.out.print("숫자2 : ");
 			cal.setNum2(scanner.nextInt());
-			System.out.println("답: "+controller.execute(cal));
+			System.out.println("답: "+calController.execute(cal));
 			break;
 		case "2" :
 			System.out.println("BMI 계산 시작");
@@ -35,7 +36,7 @@ public class Main {
 			bmi.setHeight(scanner.nextDouble());
 			System.out.print("몸무게: ");
 			bmi.setWeight(scanner.nextDouble());
-			System.out.println(controller.getBmi(user, bmi));
+			System.out.println(bmiController.getBmi(user, bmi));
 			break;
 		case "0" :
 			System.out.println("시스템 종료");
